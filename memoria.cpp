@@ -1,4 +1,4 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <locale.h>
 #include <stdlib.h>
 #include <time.h>
@@ -47,15 +47,19 @@ void generateTable()
 	
 	for (j = 0; j < 4; j++)
 	{
-
+		printf("+---------------+        \n");
 		for (i = 0; i < 3; i++)
 		{
 			int randomNumber = cardNumbers[k];
 			table[j][i] = randomNumber+'0';
 			k++;
-			printf("  %c    ", table[j][i]);
+			printf("|  %c ", table[j][i]);
+			if (i == 2)
+				printf(" |\n");
 		}
-		printf("\n\n");
+
+		if (j == 3)
+			printf("+---------------+");
 	}
 
 	Sleep(2000);
@@ -68,14 +72,16 @@ void xTable()
 
 	for (j = 0; j < 4; j++)
 	{
-
+		printf("+---------------+        \n");
 		for (i = 0; i < 3; i++)
 		{
-
 			xtable[j][i] = 'x';
-			printf("  %c    ", xtable[j][i]);
+			printf("|  %c ", xtable[j][i]);
+			if (i == 2)
+				printf(" |\n");
 		}
-		printf("\n\n");
+		if (j == 3)
+			printf("+---------------+");
 	}
 }
 
@@ -85,12 +91,15 @@ void renderXTable()
 
 	for (j = 0; j < 4; j++)
 	{
-
+		printf("+---------------+        \n");
 		for (i = 0; i < 3; i++)
 		{
-			printf("  %c    ", xtable[j][i]);
+			printf("|  %c ", xtable[j][i]);
+			if (i == 2)
+				printf(" |\n");
 		}
-		printf("\n\n");
+		if (j == 3)
+			printf("+---------------+");
 	}
 }
 
